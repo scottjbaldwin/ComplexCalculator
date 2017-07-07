@@ -29,5 +29,18 @@ namespace ComplexCalculator.Tests
             // Assert
             Assert.Equal(13, num.Imaginary);
         }
+
+        [Fact]
+        public void WhenModulousIsCalled_ItIsCalculatedAndReturned()
+        {
+            // Arrange
+            var num = new ComplexNumber { Real = 3, Imaginary = 4 };
+
+            // Act
+            var mod = num.Modulous();
+
+            // Assert
+            Assert.Equal(5, mod);
+        }
     }
 }
