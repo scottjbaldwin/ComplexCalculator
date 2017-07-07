@@ -12,5 +12,11 @@ namespace ComplexCalculator
         {
             return Math.Sqrt(Real * Real + Imaginary * Imaginary);
         }
+
+        public override string ToString()
+        {
+            var sign = Imaginary > 0 ? "+" : "";
+            return $"{Real}{sign}{Imaginary}i";
+        }
     }
 }
