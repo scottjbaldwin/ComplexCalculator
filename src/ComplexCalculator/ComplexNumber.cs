@@ -18,5 +18,14 @@ namespace ComplexCalculator
             var sign = Imaginary > 0 ? "+" : "";
             return $"{Real}{sign}{Imaginary}i";
         }
+
+        public ComplexNumber Add(ComplexNumber num)
+        {
+            return new ComplexNumber
+            {
+                Real = this.Real + num.Real,
+                Imaginary = this.Imaginary + num.Imaginary
+            };
+        }
     }
 }
