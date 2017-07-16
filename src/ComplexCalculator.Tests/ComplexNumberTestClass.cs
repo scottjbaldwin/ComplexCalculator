@@ -57,5 +57,23 @@ namespace ComplexCalculator.Tests
             // Assert
             Assert.Equal(result, str);
         }
+
+        [Theory()]
+        [InlineData(1, 2, 1, 2, 2, 4)]
+        [InlineData(1, 1, -1, -1, 0, 0)]
+        [InlineData(1, 3, -2, -5, -1, -2)]
+        void WhenComplexNumbersAdded_TheirRealPartsAndImaginaryPartsAreAdded(double r1, double i1, double r2, double i2, double r3, double i3)
+        {
+            // Arrange
+            var n1 = new ComplexNumber { Real = r1, Imaginary = i1 };
+            var n2 = new ComplexNumber { Real = r2, Imaginary = i2 };
+
+            // Act
+            var n3 = n1.Add(n2);
+
+            // Assert
+            Assert.Equal(r3, n3.Real);
+            Assert.Equal(i3, n3.Imaginary);
+        }
     }
 }
